@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FIWA Presence - Sistem Presensi Pegawai</title>
+  <meta name="description" content="Sistem presensi pegawai Fitrah Islamic World Academy">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="FIWA Presence">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="FIWA Presence">
+  <link rel="manifest" href="/manifest.webmanifest" data-static>
+  <link rel="icon" href="/icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://i.ibb.co.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/fiwa/app.89a1b2c5a5.css">
+</head>
+<body>
+  <!-- Layar pembuka (hilang otomatis saat aplikasi siap) -->
+  <div aria-live='polite' id='sk-splash' role='status'>
+    <div class='sp-bg'></div>
+    <div class='sp-main'>
+      <div class='sp-logo'>
+        <span class='sp-ring'></span><span class='sp-ring r2'></span>
+        <div class='sp-tile'><img alt='Logo Fitrah Islamic World Academy' decoding='async' height='80' onerror='this.parentNode.className+=&quot; nolg&quot;' referrerpolicy='no-referrer' src='https://i.ibb.co.com/hxTc3H6D/Logo-80x80-01.webp' width='80'/><span class='sp-fb'>FIWA</span></div>
+      </div>
+      <div class='sp-txt'><b>FIWA Presence</b><small>Sistem Presensi Pegawai</small></div>
+      <div class='sp-bar'><i></i></div>
+      <div class='sp-pill'>Bismillah, Mulai Hari dengan Amanah</div>
+    </div>
+    <div class='sp-ft'>Fitrah Islamic World Academy</div>
+  </div>
+  <noscript><div class='sk-noscript'><div><b>JavaScript belum aktif.</b><br/>Aplikasi kehadiran memerlukan JavaScript. Aktifkan JavaScript pada browser Anda lalu muat ulang halaman.</div></div></noscript>
+
+  <!-- ===== Markup aplikasi ===== -->
+<div id='sk-root'>
+  <div class='sk-login sk-hide' id='sk-login'></div>
+  <div class='sk-app sk-hide' id='sk-app'>
+    <aside class='sk-side'>
+      <div class='sk-brand'><div class='sk-logo' id='sk-logo'></div><div><b id='sk-school'>FIWA Presence</b><small>Sistem Presensi Pegawai</small></div></div>
+      <nav class='sk-nav' id='sk-nav'></nav>
+      <div class='sk-userbox'><div class='sk-av' id='sk-av'>A</div><div style='min-width:0;flex:1'><div class='n' id='sk-un'>-</div><div class='r' id='sk-ur'>-</div></div>
+        <button class='sk-ibtn' data-act='logout' title='Keluar'></button></div>
+    </aside>
+    <div class='sk-main'>
+      <header class='sk-top'><button aria-label='Ciutkan atau perluas menu' class='sk-ibtn sk-coll-btn' data-act='sideToggle' id='sk-coll' title='Ciutkan atau perluas menu'></button><div class='sk-crumb'><small id='sk-crumb'>Beranda</small><h2 id='sk-title'>Dashboard</h2></div><span class='sk-chip' id='sk-date'></span><button aria-label='Notifikasi' class='sk-ibtn' data-act='goNotif' id='sk-bell' title='Notifikasi'></button><div class='sk-tuser'><div class='sk-av' id='sk-tav'>A</div><div class='tx'><div class='n' id='sk-tun'>-</div><div class='r' id='sk-tur'>-</div></div></div><button aria-label='Keluar' class='sk-ibtn sk-mob-out' data-act='logout' title='Keluar'></button></header>
+      <main id='sk-view'></main>
+    </div>
+    <nav class='sk-bnav' id='sk-bnav'></nav>
+  </div>
+  <div id='sk-toasts'></div>
+</div>
+
+
+  <!-- Konfigurasi dari environment variable Vercel (dibuat oleh /config.js) -->
+  <script src="/config.js"></script>
+  <script>
+const FIWA_CFG = window.FIWA_CONFIG || {};
+const IS_PREVIEW = !!FIWA_CFG.preview; // true = mode uji coba dengan data contoh, tanpa Supabase
+const SUPABASE_URL = FIWA_CFG.url || "";
+const SUPABASE_ANON_KEY = FIWA_CFG.key || "ANON_KEY_ANDA";
+const SUPABASE_ESM = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
+const XLSX_URL = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
+const APP_NAME = "FIWA Presence";
+const APP_TAGLINE = "Sistem Presensi Pegawai";
+const LOGO_URL = FIWA_CFG.logo || "https://i.ibb.co.com/hxTc3H6D/Logo-80x80-01.webp";
+function logoImg(){return '<img src="'+LOGO_URL+'" alt="Logo Fitrah Islamic World Academy" width="80" height="80" decoding="async" referrerpolicy="no-referrer">'}
+  </script>
+  <script src="/fiwa/app.9cd6a9aecc.js"></script>
+  <script>
+(function(){
+  var s=document.getElementById('sk-splash');if(!s)return;
+  function done(){if(!s)return;var x=s;s=null;x.className+=' off';setTimeout(function(){if(x.parentNode)x.parentNode.removeChild(x)},600)}
+  function ready(){
+    var l=document.getElementById('sk-login'),a=document.getElementById('sk-app');
+    return (l&&l.className.indexOf('sk-hide')<0)||(a&&a.className.indexOf('sk-hide')<0);
+  }
+  var t0=Date.now();
+  var t=setInterval(function(){if(ready()){clearInterval(t);setTimeout(done,Math.max(0,900-(Date.now()-t0)))}},120);
+  setTimeout(function(){clearInterval(t);done()},12000);
+})();
+  </script>
+</body>
+</html>
